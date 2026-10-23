@@ -1,0 +1,33 @@
+{
+  "manifest_version": 1,
+  "id": "firewall",
+  "i18n": {
+    "default": {
+      "name": "OneKVM Firewall",
+      "description": "Installs firewall tools and kernel modules. Configure and enable protection in Firewall settings."
+    },
+    "zh": {
+      "name": "OneKVM 防火墙",
+      "description": "安装防火墙工具和内核模块。在防火墙设置中配置规则并启用防护。"
+    },
+    "zh-TW": {
+      "name": "OneKVM 防火牆",
+      "description": "安裝防火牆工具和核心模組。在防火牆設定中設定規則並啟用防護。"
+    }
+  },
+  "version": "@VERSION@",
+  "api_version": 2,
+  "architecture": "@ARCH@",
+  "kind": "network",
+  "author": "OneKVM",
+  "kernel_modules": ["iptable_filter", "ip6table_filter", "xt_conntrack", "xt_comment", "xt_multiport", "xt_tcpudp", "xt_hashlimit"],
+  "permissions": [],
+  "capabilities": [],
+  "default_enabled": false,
+  "icon": {"source": "lucide", "name": "brick-wall-shield"},
+  "methods": [{"name": "health", "command": ["bin/onekvm-firewall", "--health"], "timeout_seconds": 5}],
+  "settings_schema": {"type": "object", "additionalProperties": false, "properties": {}},
+  "secret_fields": [],
+  "resource_limits": {"memory_max": "4M", "cpu_quota": "1%", "tasks_max": 2, "limit_nofile": 16},
+  "healthcheck": {"type": "exec", "command": ["bin/onekvm-firewall", "--health"], "timeout_seconds": 5}
+}

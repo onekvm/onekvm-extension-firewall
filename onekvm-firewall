@@ -1,0 +1,6 @@
+#!/bin/sh
+# The runtime has no resident process. OneKVM owns policy and confirmation.
+set -eu
+bindir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+"$bindir/iptables" --version >/dev/null
+"$bindir/ip6tables" --version >/dev/null
