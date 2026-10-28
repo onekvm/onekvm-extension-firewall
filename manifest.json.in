@@ -18,7 +18,7 @@
   "version": "@VERSION@",
   "api_version": 2,
   "architecture": "@ARCH@",
-  "kind": "network",
+  "kind": "environment",
   "author": "OneKVM",
   "kernel_modules": ["iptable_filter", "ip6table_filter", "xt_conntrack", "xt_comment", "xt_multiport", "xt_tcpudp", "xt_hashlimit"],
   "permissions": [],

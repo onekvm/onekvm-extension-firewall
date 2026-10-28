@@ -1,6 +1,6 @@
 HOMEPAGE = "https://github.com/onekvm/onekvm-extension-firewall"
-SUMMARY = "Optional OneKVM firewall runtime"
-DESCRIPTION = "Private IPv4/IPv6 iptables tools and the kernel modules required by OneKVM firewall settings. Not installed in the base image."
+SUMMARY = "OneKVM firewall runtime"
+DESCRIPTION = "Private IPv4/IPv6 iptables tools and the kernel modules required by OneKVM firewall settings. Included in the base image with protection off by default."
 LICENSE = "GPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 file://${ONEKVM_FIREWALL_SOURCE}/LICENSE;md5=261bea1168c0bdfa73232ee90df11eb6"
 PR = "r1"
@@ -18,7 +18,10 @@ SRC_URI = " \
 SRC_URI[iptables.sha256sum] = "1afcd33da9e8f913ace6a2126788162e207e26f5d5e29c6573c0e581ffc58b99"
 SRCREV = "${ONEKVM_COMPONENT_SRCREV}"
 S = "${UNPACKDIR}/iptables-${IPTABLES_VERSION}"
-ONEKVM_FIREWALL_SOURCE = "${UNPACKDIR}/${BP}"
+ONEKVM_EXTENSION_SOURCE ?= "${UNPACKDIR}/${BP}"
+ONEKVM_EXTENSION_SOURCE_REV ?= "${ONEKVM_COMPONENT_SRCREV}"
+ONEKVM_FIREWALL_SOURCE = "${ONEKVM_EXTENSION_SOURCE}"
+do_install[vardeps] += "ONEKVM_EXTENSION_SOURCE_REV"
 
 inherit autotools pkgconfig onekvm-extension
 
