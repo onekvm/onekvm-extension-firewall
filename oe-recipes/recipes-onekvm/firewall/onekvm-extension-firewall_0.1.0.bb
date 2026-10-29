@@ -3,7 +3,7 @@ SUMMARY = "OneKVM firewall runtime"
 DESCRIPTION = "Private IPv4/IPv6 iptables tools and the kernel modules required by OneKVM firewall settings. Included in the base image with protection off by default."
 LICENSE = "GPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 file://${ONEKVM_FIREWALL_SOURCE}/LICENSE;md5=261bea1168c0bdfa73232ee90df11eb6"
-PR = "r1"
+PR = "r2"
 
 ONEKVM_COMPONENT_GIT_URI ??= "git://github.com/onekvm/onekvm-extension-firewall.git;protocol=https;branch=main"
 ONEKVM_COMPONENT_SRCREV ??= ""
