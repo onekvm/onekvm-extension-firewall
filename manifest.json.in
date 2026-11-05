@@ -4,15 +4,15 @@
   "i18n": {
     "default": {
       "name": "OneKVM Firewall",
-      "description": "Installs firewall tools and kernel modules. Configure and enable protection in Firewall settings."
+      "description": "Configure rules and enable protection in Firewall settings; no separate plugin activation is needed."
     },
     "zh": {
       "name": "OneKVM 防火墙",
-      "description": "安装防火墙工具和内核模块。在防火墙设置中配置规则并启用防护。"
+      "description": "在防火墙设置中配置规则并启用防护，无需单独启用插件。"
     },
     "zh-TW": {
       "name": "OneKVM 防火牆",
-      "description": "安裝防火牆工具和核心模組。在防火牆設定中設定規則並啟用防護。"
+      "description": "在防火牆設定中設定規則並啟用防護，無需單獨啟用外掛。"
     }
   },
   "version": "@VERSION@",
