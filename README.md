@@ -1,6 +1,6 @@
 # OneKVM firewall extension
 
-Private IPv4/IPv6 iptables tools and the kernel modules required by OneKVM firewall settings. Included in the base image alongside the system iptables tools.
+Kernel modules and the nftables dependency required by OneKVM firewall settings. OneKVM installs the policy as its own `inet` table with the system `nft`. Included in the base image.
 
 The manifest, health command, assets, and payload installation rules belong to
 this repository. `oe-recipes/` contains its OpenEmbedded layer; the distro pins
@@ -15,7 +15,7 @@ make ONEKVM_MACHINE=onekvm-nanokvm build extension firewall
 To stage the payload locally:
 
 ```sh
-make install DESTDIR=/tmp/onekvm-firewall-stage PREFIX=/data/onekvm/apps/firewall/0.1.0 VERSION=0.1.0 ARCH=riscv64 XTABLES_BINARY=/path/to/xtables-legacy-multi
+make install DESTDIR=/tmp/onekvm-firewall-stage PREFIX=/data/onekvm/apps/firewall/0.1.0 VERSION=0.1.0 ARCH=riscv64
 ```
 
 This environment package is ready after installation and needs no service switch.

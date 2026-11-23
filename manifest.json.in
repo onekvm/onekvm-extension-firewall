@@ -20,7 +20,7 @@
   "architecture": "@ARCH@",
   "kind": "environment",
   "author": "OneKVM",
-  "kernel_modules": ["iptable_filter", "ip6table_filter", "xt_conntrack", "xt_comment", "xt_multiport", "xt_tcpudp", "xt_hashlimit"],
+  "kernel_modules": ["nf_tables", "nft_ct", "nft_reject_inet"],
   "permissions": [],
   "capabilities": [],
   "default_enabled": false,
