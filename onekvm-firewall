@@ -1,6 +1,5 @@
 #!/bin/sh
-# The runtime has no resident process. OneKVM owns policy and confirmation.
+# The runtime has no resident process. OneKVM owns policy and confirmation
+# and installs it with the system nft.
 set -eu
-bindir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-"$bindir/iptables" --version >/dev/null
-"$bindir/ip6tables" --version >/dev/null
+/usr/sbin/nft --version >/dev/null
